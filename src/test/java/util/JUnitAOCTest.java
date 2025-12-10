@@ -14,6 +14,7 @@ public class JUnitAOCTest {
     @BeforeEach
     void setUp(TestInfo testInfo) {
         printHeader(getAnnotation(testInfo));
+
         stopWatch.start();
     }
 
