@@ -1,15 +1,15 @@
 package com.amayr.aoc2015.d3;
 
-import com.amayr.aoc2015.util.Position;
+import com.amayr.aoc2015.util.Pos;
 
 import java.util.HashMap;
 import java.util.List;
 
 public final class Day3 {
     public int task1(List<String> lines) {
-        var initialPosition = new Position();
+        var initialPosition = new Pos();
 
-        var visited = new HashMap<Position, Integer>();
+        var visited = new HashMap<Pos, Integer>();
 
         for (String line : lines) {
             visited.clear();
@@ -26,10 +26,10 @@ public final class Day3 {
     }
 
     public int task2(List<String> lines) {
-        var initialPositionS = new Position();
-        var initialPositionR = new Position();
+        var initialPositionS = new Pos();
+        var initialPositionR = new Pos();
 
-        var visited = new HashMap<Position, Integer>();
+        var visited = new HashMap<Pos, Integer>();
         visited.put(initialPositionS, 1);
         visited.put(initialPositionR, 1);
 
@@ -48,13 +48,13 @@ public final class Day3 {
         return visited.size();
     }
 
-    private Position move(char direction, Position position) {
+    private Pos move(char direction, Pos pos) {
         return switch (direction) {
-            case '^' -> position.add(Position.UP);
-            case 'v' -> position.add(Position.DOWN);
-            case '<' -> position.add(Position.LEFT);
-            case '>' -> position.add(Position.RIGHT);
-            default -> position;
+            case '^' -> pos.add(Pos.UP);
+            case 'v' -> pos.add(Pos.DOWN);
+            case '<' -> pos.add(Pos.LEFT);
+            case '>' -> pos.add(Pos.RIGHT);
+            default -> pos;
         };
     }
 }
